@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="flex items-center">
         <Link href="/" className="hover:text-gray-400 transition-colors">
           <Image
-            src="/triskcraft_logo.png"
+            src="/Triskcraft_logo.png"
             alt="Logo"
             width={100}
             height={100}
