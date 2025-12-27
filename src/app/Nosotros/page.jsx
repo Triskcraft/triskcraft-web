@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Nosotros() {
     return (
-        <div className="px-6 md:px-10 w-full p-4">
+        <div className="container flex flex-col mx-auto px-6 md:px-10 p-4">
           <h2 className="m-4 text-4xl font-bold text-black dark:text-white ">Sobre nosotros</h2>
           <div className="m-2 my-20 flex flex-wrap items-center justify-between w-full">
             <div className="px-6 md:px-10 w-full md:w-1/2 p-4">
