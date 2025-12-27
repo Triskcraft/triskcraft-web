@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "WillLuke.nextjs",
+        "prettier.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "csstools.postcss",
+        "vunguyentuan.vscode-postcss",
+        "bradlc.vscode-tailwindcss",
+        "pomdtr.markdown-kroki"
+    ]
+}
