@@ -14,8 +14,8 @@ const Miembro = ({ id, nombre, staff, rol, texto, medalla }) => {
   return (
     <div
       id={nombre}
-      className="m-2 my-10 p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
-      min-w-[250px] min-h-[200px] md:flex md:flex-wrap md:items-center md:justify-between md:w-full md:max-w-sm"
+      className="m-2 my-10 min-h-[200px] min-w-[250px] rounded-2xl border border-triskgold/25 bg-white/5 p-6 text-white shadow-lg shadow-black/30 transition duration-300 hover:-translate-y-1 hover:shadow-2xl 
+      md:flex md:max-w-sm md:flex-wrap md:items-center md:justify-between md:w-full"
     >
       <div className="flex justify-center md:flex-shrink-0">
         <Image
@@ -26,8 +26,8 @@ const Miembro = ({ id, nombre, staff, rol, texto, medalla }) => {
           height={100}
         />
       </div>
-      <div className="text-center md:ml-9 flex-grow md:text-left">
-        <h3 className="flex items-center gap-2 text-xl font-semibold text-black dark:text-white md:mb-4">
+      <div className="flex-grow text-center md:ml-9 md:text-left">
+        <h3 className="md:mb-4 flex items-center gap-2 text-xl font-semibold text-white">
           {nombre}
           {medalla && (
             <Image
@@ -39,11 +39,16 @@ const Miembro = ({ id, nombre, staff, rol, texto, medalla }) => {
             />
           )}
         </h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{staff}</p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{rol}</p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-triskgold/80">{staff}</p>
+        <p className="text-sm text-white/70">{rol}</p>
+        <p className="text-sm text-white/70">
           {isURL(texto) ? (
-            <a href={texto} target="_blank" rel="noopener noreferrer">
+            <a
+              href={texto}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-triskgold transition hover:text-white"
+            >
               {"Redes sociales"}
             </a>
           ) : (

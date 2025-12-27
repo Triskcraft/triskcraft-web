@@ -4,12 +4,12 @@ import Comounirse from "@/components/ComoUnirse";
 
 export default function MiembrosPage() {
   return (
-    <div className="container m-2 my-10 flex flex-col mx-auto items-center justify-around w-full">
-      <div className="px-6 md:px-10 w-full p-4">
-        <h2 className="m-4 text-4xl font-bold text-black dark:text-white ">
+    <div className="container m-2 my-10 flex w-full max-w-6xl flex-col items-center justify-around rounded-3xl border border-triskgold/20 bg-black/30 px-4 py-8 shadow-2xl backdrop-blur">
+      <div className="w-full px-6 p-4 md:px-10">
+        <h2 className="m-4 text-4xl font-bold text-triskgold drop-shadow-lg ">
           Miembros activos del servidor
         </h2>
-        <p className="m-4 py-2 text-2xl text-gray-500 dark:text-gray-400 mb-6 ">
+        <p className="m-4 mb-6 py-2 text-lg text-white/75 ">
           Miembros destacados del servidor por su aporte a este:
         </p>
       </div>
@@ -107,11 +107,11 @@ export default function MiembrosPage() {
         />
       </div>
 
-      <div className="px-6 md:px-10 w-full p-4">
-        <h3 className="m-4 text-4xl font-bold text-black dark:text-white ">
+      <div className="w-full px-6 p-4 md:px-10">
+        <h3 className="m-4 text-4xl font-bold text-triskgold drop-shadow-lg ">
           Miembros historicos
         </h3>
-        <p className="m-4 py-2 text-2xl text-gray-500 dark:text-gray-400 mb-6 ">
+        <p className="m-4 mb-6 py-2 text-lg text-white/75 ">
           Miembros que ya no son activos en el servidor, pero que queriamos
           darle un espacio, ya que sin su aporte este comunidad no seria lo
           mismo:
