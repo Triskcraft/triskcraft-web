@@ -14,7 +14,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div>
+    <div className="container flex flex-col mx-auto">
       <div className="my-10 flex flex-wrap items-center justify-between w-full">
         <div className="px-6 md:px-10 w-full md:w-1/2 p-4">
           <h1 className="m-4 text-5xl font-bold text-black dark:text-white">

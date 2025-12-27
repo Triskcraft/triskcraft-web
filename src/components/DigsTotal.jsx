@@ -44,12 +44,12 @@ const DigTotal = ({ cantidad } ) => {
   const totalScore = scoresArray.reduce((sum, user) => sum + user.score, 0);
 
   return (
-    <div className="p-4 w-8/9 mb-8 justify-evenly">
+    <div className="p-4 w-8/9 mb-8 justify-evenly flex flex-col">
       <h2 className="text-4xl ml-10 mb-4 font-bold text-black dark:text-white">Top Jugadores</h2>
       <p className="w-5/6 m-4 py-2 text-2xl text-gray-500 dark:text-gray-400 mb-6">
             Top {cantidad} de los juagadores con mas bloques minados dentro del servidor.
           </p>
-      <table className="min-w-full">
+      <table className="">
         <thead>
           <tr>
             <th className="py-2 px-4 text-xl sm:text-2xl text-black dark:text-white">Nombre</th>
