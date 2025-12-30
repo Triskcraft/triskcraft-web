@@ -1,8 +1,12 @@
 //app/Miembros/page.jsx
 import Miembro from '@/components/Miembro'
 import Comounirse from '@/components/ComoUnirse'
+import { getActiveMembersAction } from '@/actions/members.actions'
 
-export default function MiembrosPage() {
+export default async function MiembrosPage() {
+    //const miembros = await getActiveMembersAction()
+    //console.log('Fetching active members...', miembros)
+
     return (
         <div className='relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10'>
             <div className='container mx-auto flex max-w-6xl flex-col rounded-3xl border border-triskgold/20 bg-black/30 px-3 py-4 md:px-6 md:py-6'>

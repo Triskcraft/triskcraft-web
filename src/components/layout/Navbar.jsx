@@ -46,21 +46,21 @@ const Navbar = () => {
                 <nav
                     className={`absolute left-0 top-full w-full bg-transparent shadow-none transition-all duration-300 md:static md:w-auto md:overflow-visible md:bg-transparent md:shadow-none ${
                         isOpen ?
-                            'max-h-96 bg-gradient-to-r from-triskgreen via-triskmint to-triskgreen'
+                            'max-h-96 bg-gradient-to-r from-triskgreen/50 via-triskmint/50 to-triskgreen/50'
                         :   'max-h-0 overflow-hidden opacity-0 md:max-h-none md:opacity-100'
                     }`}
                 >
                     <ul className='flex flex-col items-start gap-4 px-6 py-4 text-lg font-semibold md:flex-row md:items-center md:gap-10 md:px-0 md:py-0'>
-                        <li className='transition hover:text-triskgold/80 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
                             <Link href='/'>Inicio</Link>
                         </li>
-                        <li className='transition hover:text-triskgold/80 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
                             <Link href='/Nosotros'>Nosotros</Link>
                         </li>
-                        <li className='transition hover:text-triskgold/80 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
                             <Link href='/Proyectos'>Proyectos</Link>
                         </li>
-                        <li className='transition hover:text-triskgold/80 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
                             <Link href='/Miembros'>Miembros</Link>
                         </li>
                         <li>

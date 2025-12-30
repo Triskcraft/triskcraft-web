@@ -15,19 +15,23 @@ export default function Nosotros() {
                             Historia
                         </h3>
                         <p className='m-4 mb-6 w-5/6 py-2 text-lg text-white/75'>
-                            Toda historia tiene un inicio y la de este servidor
-                            es la siguiente, dos amigos con el sueño e
-                            impulsados por el amor a minecraft y al técnico
-                            deciden crear su propio servidor, formando amistades
-                            y lazos invaluables, pero no tanto como el de ellos,
-                            en un momento el amor por el servidor y el cariño de
-                            su amistad se transformo en algo mas, las llamadas,
-                            las palabras entre cada uno se sentia mas cercano,
-                            ninguno tenia el valor para decirlo pero sabian que
-                            era mutuo Y no lo demostraban pero mediante el
-                            cariño que le ponían al servidor lo demostrataban,
-                            era su vínculo especial, si bien había mas gente
-                            sabian que seria siempre algo especial de ellos.
+                            Todo comenzó en 2019, impulsado por la simple pero
+                            poderosa necesidad de jugar Minecraft junto a
+                            personas verdaderamente apasionadas por el modo de
+                            juego técnico. Dos amigos dieron el primer paso y
+                            fundaron lo que sería conocido como TriskCraft,
+                            reclutando jugadores desde grupos y comunidades
+                            dedicadas a esta rama del juego. Con el tiempo,
+                            llegó un tercer integrante que se convertiría en un
+                            pilar fundamental del proyecto. Juntos, los tres
+                            administradores experimentaron, fallaron,
+                            aprendieron y reconstruyeron TriskCraft una y otra
+                            vez, dando vida a múltiples versiones del servidor.
+                            Cada reinicio no fue un final, sino una evolución.
+                            Gracias a esa constancia y visión compartida,
+                            TriskCraft fue tomando forma hasta convertirse en lo
+                            que es hoy: una comunidad sólida, técnica y en
+                            constante crecimiento.
                         </p>
                     </div>
                     <div className='flex w-full items-center justify-center p-4 px-6 md:w-1/2 md:px-10'>
