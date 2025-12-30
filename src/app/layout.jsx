@@ -7,13 +7,17 @@ import Footer from '@/components/layout/Footer';
 export const metadata = {
   title: 'Triskcraft SMP',
   description: 'SMP dedicado a Minecraft Tecnico, Redstone y Decoracion.',
-  viewport: "width=device-width, initial-scale=1.0",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className='bg-white dark:bg-gray-900 '>
+      <body className="min-h-screen bg-gradient-to-b from-triskgreen via-[#0b261e] to-black text-white">
         <Navbar />
         <main>{children}</main>
         <Footer />

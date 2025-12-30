@@ -1,73 +1,83 @@
 'use client'
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import React, { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false)
 
-  return (
-    <header className="bg-colorsecundaro text-black dark:text-white font-bold p-4 flex justify-between items-center">
-      {/* Logo */}
-      <div className="flex items-center">
-        <Link href="/" className="hover:text-gray-400 transition-colors">
-          <Image
-            src="/Triskcraft_logo.png"
-            alt="Logo"
-            width={100}
-            height={100}
-            className="mx-auto"
-          />
-        </Link>
-      </div>
-      <button
-        className="md:hidden block text-black dark:text-white"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <AiOutlineClose size={32} /> : <AiOutlineMenu size={32} />}
-      </button>
+    return (
+        <header className='sticky top-0 z-50 border-b border-triskgold/30 bg-gradient-to-r from-triskgreen via-triskmint to-triskgreen text-triskgold shadow-xl backdrop-blur-md'>
+            <div className='mx-auto flex max-w-6xl items-center justify-between px-4 py-3'>
+                <div className='flex items-center gap-3'>
+                    <Link
+                        href='/'
+                        className='rounded-full bg-white/5 p-2 transition hover:scale-105 hover:bg-white/10'
+                    >
+                        <Image
+                            src='/Triskcraft_logo.png'
+                            alt='Logo'
+                            width={80}
+                            height={80}
+                            className='mx-auto drop-shadow-lg'
+                        />
+                    </Link>
+                    <div className='hidden flex-col text-sm leading-tight text-triskgold sm:flex'>
+                        <span className='text-lg font-bold uppercase tracking-[0.4em]'>
+                            Triskcraft
+                        </span>
+                        <span className='text-white'>
+                            SMP TECNICO Y DECORATIVO
+                        </span>
+                    </div>
+                </div>
 
-      <nav
-        className={`absolute md:static top-24 left-0 w-full md:w-auto bg-colorsecundaro md:bg-transparent 
-        md:flex text-2xl md:space-x-6 p-4 md:p-0 transition-transform transform ${
-          isOpen ? "block" : "hidden md:flex"
-        }`}
-      >
-        <ul className="flex flex-col md:flex-row md:items-center space-x-12 space-y-4 md:space-y-0">
-          <li className="hover:scale-105">
-            <Link href="/" className="hover:text-triskyellow transition-colors">
-              Inicio
-            </Link>
-          </li>
-          <li className="hover:scale-105">
-            <Link
-              href="/Nosotros"
-              className="hover:text-triskyellow transition-colors"
-            >
-              Nosotros
-            </Link>
-          </li>
-          <li className="hover:scale-105">
-            <Link
-              href="/Proyectos"
-              className="hover:text-triskyellow transition-colors"
-            >
-              Proyectos
-            </Link>
-          </li>
-          <li className="hover:scale-105">
-            <Link
-              href="/Miembros"
-              className="hover:text-triskyellow  transition-colors"
-            >
-              Miembros
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
+                <button
+                    className='block rounded-lg p-2 text-triskgold transition hover:bg-white/5 md:hidden'
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+                >
+                    {isOpen ?
+                        <AiOutlineClose size={28} />
+                    :   <AiOutlineMenu size={28} />}
+                </button>
 
-export default Navbar;
+                <nav
+                    className={`absolute left-0 top-full w-full bg-transparent shadow-none transition-all duration-300 md:static md:w-auto md:overflow-visible md:bg-transparent md:shadow-none ${
+                        isOpen ?
+                            'max-h-96 bg-gradient-to-r from-triskgreen/50 via-triskmint/50 to-triskgreen/50'
+                        :   'max-h-0 overflow-hidden opacity-0 md:max-h-none md:opacity-100'
+                    }`}
+                >
+                    <ul className='flex flex-col items-start gap-4 px-6 py-4 text-lg font-semibold md:flex-row md:items-center md:gap-10 md:px-0 md:py-0'>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                            <Link href='/'>Inicio</Link>
+                        </li>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                            <Link href='/Nosotros'>Nosotros</Link>
+                        </li>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                            <Link href='/Proyectos'>Proyectos</Link>
+                        </li>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                            <Link href='/Miembros'>Miembros</Link>
+                        </li>
+                        <li>
+                            <a
+                                href='https://discord.com/invite/VJQJRZehTG'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='inline-flex items-center gap-2 rounded-full bg-triskgold px-4 py-2 text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
+                            >
+                                Únete al Discord
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    )
+}
+
+export default Navbar
