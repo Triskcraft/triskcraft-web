@@ -65,7 +65,7 @@ interface MedallaProps {
     digs: number
 }
 function Medalla({ digs }: MedallaProps) {
-    if (digs >= 1_000_000) return null
+    if (digs < 1_000_000) return null
     return (
         <Image
             src={MedallaIamge}
