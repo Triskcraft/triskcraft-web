@@ -17,7 +17,7 @@ const Navbar = () => {
                         className='rounded-full bg-white/5 p-2 transition hover:scale-105 hover:bg-white/10'
                     >
                         <Image
-                            src='/Triskcraft_logo.png'
+                            src='/triskcraft_logo.webp'
                             alt='Logo'
                             width={80}
                             height={80}

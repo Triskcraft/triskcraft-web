@@ -36,7 +36,7 @@ export default function Nosotros() {
                     </div>
                     <div className='flex w-full items-center justify-center p-4 px-6 md:w-1/2 md:px-10'>
                         <Image
-                            src='/triskcraft_logo.png'
+                            src='/triskcraft_logo.webp'
                             alt='logo mapa'
                             width={500}
                             height={500}
