@@ -4,6 +4,8 @@ import Comounirse from '@/components/ComoUnirse'
 import { getActiveMembersAction } from '@/actions/members.actions'
 import type { Member as MemberType } from '@/types'
 
+export const revalidate = 86400
+
 export default async function MiembrosPage() {
     const members = await getActiveMembersAction()
 
