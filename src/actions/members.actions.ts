@@ -1,18 +1,10 @@
 'use server'
-
-import { ROUTES } from '@/constant/routes'
-import { readFile } from 'node:fs/promises'
+import type { Member } from '@/types'
 
 export async function getActiveMembersAction() {
-    const whitelist: { uuid: string; name: string }[] = JSON.parse(
-        await readFile(ROUTES.WHITELIST, {
-            encoding: 'utf-8',
-        }),
-    )
-    const players_log = await readFile(ROUTES.PLAYER_LIST, {
-        encoding: 'utf-8',
-    })
-    const players = players_log.split('\n').filter(Boolean)
+    const req = await fetch('https://api.triskcraft.com/members')
+    if (req.status !== 200) return []
+    const members = (await req.json()) as Member[]
 
-    return whitelist.filter(({ name }) => players.includes(name))
+    return members
 }

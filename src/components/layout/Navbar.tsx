@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import app from '@eliyya/type-routes'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -61,7 +62,7 @@ const Navbar = () => {
                             <Link href='/Proyectos'>Proyectos</Link>
                         </li>
                         <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
-                            <Link href='/Miembros'>Miembros</Link>
+                            <Link href={app.members()}>Miembros</Link>
                         </li>
                         <li>
                             <a
