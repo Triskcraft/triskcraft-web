@@ -4,12 +4,12 @@ import Image from 'next/image'
 const Comounirse = () => {
     return (
         <div className='relative overflow-hidden rounded-3xl border border-triskgold/25 bg-gradient-to-r from-[#0a1b15] via-triskgreen to-[#0f3229] p-8 shadow-2xl md:p-12'>
+            <p className='inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-triskgold'>
+                Únete
+            </p>
             <div className='absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(214,175,63,0.25),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.08),transparent_30%)]' />
             <div className='relative grid items-center gap-8 md:grid-cols-2'>
-                <div className='order-2 flex flex-col gap-4 md:order-1'>
-                    <p className='inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-triskgold'>
-                        Únete
-                    </p>
+                <div className='order-1 flex flex-col gap-4 md:order-1'>
                     <h2 className='text-3xl font-bold text-white drop-shadow-lg md:text-4xl'>
                         ¿Cómo entrar al SMP?
                     </h2>
@@ -77,7 +77,7 @@ const Comounirse = () => {
                     </div>
                 </div>
 
-                <div className='order-1 flex items-center justify-center md:order-2'>
+                <div className='order-2 flex items-center justify-center md:order-2'>
                     <a
                         href='https://discord.com/invite/VJQJRZehTG'
                         target='_blank'
