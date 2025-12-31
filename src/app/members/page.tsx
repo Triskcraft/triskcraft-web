@@ -60,11 +60,23 @@ export default async function MiembrosPage() {
     )
 }
 
+const ranks = [
+    'Owner',
+    'Administrador +',
+    'Staff',
+    'DEV',
+    'Miembro',
+    'Member Test',
+]
+
 interface MemberListProps {
     members: MemberType[]
 }
 function MemberList({ members }: MemberListProps) {
-    return members.map(
+    const ranksSort = members
+        .map(member => ({ ...member, position: ranks.indexOf(member.rank) }))
+        .sort((a, b) => a.position - b.position)
+    return ranksSort.map(
         ({ description, digs, mc_name, mc_uuid, rank, roles }) => (
             <Member
                 digs={digs}
