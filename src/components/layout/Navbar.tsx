@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import app from '@eliyya/type-routes'
 
-const Navbar = () => {
+export function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -36,7 +36,7 @@ const Navbar = () => {
 
                 <button
                     className='block rounded-lg p-2 text-triskgold transition hover:bg-white/5 md:hidden'
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => setIsOpen(isOpen => !isOpen)}
                     aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
                 >
                     {isOpen ?
@@ -81,5 +81,3 @@ const Navbar = () => {
         </header>
     )
 }
-
-export default Navbar
