@@ -1,4 +1,5 @@
 // components/Footer.js
+import app from '@eliyya/type-routes'
 import Link from 'next/link'
 import {
     FaTwitter,
@@ -8,7 +9,7 @@ import {
     FaDiscord,
 } from 'react-icons/fa'
 
-const Footer = () => {
+export function Footer() {
     return (
         <footer className='bg-gradient-to-b from-[#0a1f18] via-triskgreen to-black py-10 text-triskgold'>
             <div className='container mx-auto px-4'>
@@ -35,7 +36,7 @@ const Footer = () => {
                     </Link>
 
                     <Link
-                        href='/Miembros'
+                        href={app.members()}
                         className='mx-4 transition-colors hover:text-white'
                     >
                         Miembros
@@ -123,5 +124,3 @@ const Footer = () => {
         </footer>
     )
 }
-
-export default Footer
