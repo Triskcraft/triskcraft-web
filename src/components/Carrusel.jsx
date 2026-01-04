@@ -45,6 +45,7 @@ export default function Carrusel({ images }) {
                         data-carousel-item
                     >
                         <Image
+                            fill
                             src={image}
                             className='block h-full w-full object-cover'
                             alt={`Slide ${index + 1}`}

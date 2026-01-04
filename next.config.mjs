@@ -6,7 +6,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'api.mineatar.io',
+                hostname: 'mc-heads.net',
             },
             {
                 protocol: 'https',
