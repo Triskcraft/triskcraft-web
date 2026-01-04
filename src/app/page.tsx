@@ -1,8 +1,9 @@
 //src/app/components/page.jsx
-import Carrusel from '@/components/Carrusel'
-import Comounirse from '@/components/ComoUnirse'
-import Videocard from '@/components/videocard'
+import { Carrusel } from '@/components/Carrusel'
+import { HowToJoin } from '@/components/ComoUnirse'
+import { VideoCard } from '@/components/video-card'
 import DigTotal from '@/components/DigsTotal'
+import Link from 'next/link'
 
 export default function HomePage() {
     const images = [
@@ -103,7 +104,7 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <Comounirse />
+            <HowToJoin />
 
             <div className='w-full overflow-hidden rounded-3xl border border-triskgold/20 bg-gradient-to-r from-[#0a1b15] via-triskgreen to-[#0f2f23] p-8 shadow-2xl md:p-12'>
                 <div className='flex flex-col gap-6 md:flex-row md:items-start md:justify-between'>
@@ -121,22 +122,22 @@ export default function HomePage() {
                             avanzado de redstone y decoración.
                         </p>
                     </div>
-                    <a
+                    <Link
                         href='https://www.youtube.com/@Triskcraft'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='inline-flex items-center gap-2 rounded-full border border-triskgold/60 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-triskgold transition hover:bg-triskgold/15'
                     >
                         Más videos en YouTube
-                    </a>
+                    </Link>
                 </div>
 
                 <div className='mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-                    <Videocard id='0-E_lBWVs9c' nombre='Tour 2 meses | Vugx' />
-                    <Videocard id='8ivEA_wTQzU' nombre='Tour 1 año | Vugx' />
-                    <Videocard
+                    <VideoCard id='0-E_lBWVs9c' name='Tour 2 meses | Vugx' />
+                    <VideoCard id='8ivEA_wTQzU' name='Tour 1 año | Vugx' />
+                    <VideoCard
                         id='0-E_lBWVs9c'
-                        nombre='Recorrido técnico y decoración'
+                        name='Recorrido técnico y decoración'
                     />
                 </div>
             </div>

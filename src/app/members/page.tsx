@@ -1,12 +1,11 @@
-//app/Miembros/page.jsx
-import { Member } from '@/components/Miembro'
-import Comounirse from '@/components/ComoUnirse'
+import { MemberCard } from '@/components/member-card'
+import { HowToJoin } from '@/components/ComoUnirse'
 import { getActiveMembersAction } from '@/actions/members.actions'
 import type { Member as MemberType } from '@/types'
 
 export const revalidate = 43200
 
-export default async function MiembrosPage() {
+export default async function MembersPage() {
     const members = await getActiveMembersAction()
 
     return (
@@ -35,7 +34,7 @@ export default async function MiembrosPage() {
                     </p>
                 </div>
                 <div className='flex w-full flex-wrap items-center justify-around'>
-                    <Member
+                    <MemberCard
                         id='cc0d020bb28a460c802e89cc1ad64bbb'
                         name='Severalplot4310'
                         role='Digger'
@@ -43,7 +42,7 @@ export default async function MiembrosPage() {
                         rank={''}
                         digs={0}
                     />
-                    <Member
+                    <MemberCard
                         id='03b290cb27c74eb5850f81cb22160efc'
                         name='iFoxmin'
                         role='Digger'
@@ -55,7 +54,7 @@ export default async function MiembrosPage() {
                 <div className='flex flex-col px-4 py-6 md:px-10 md:py-0'></div>
             </div>
 
-            <Comounirse />
+            <HowToJoin />
         </div>
     )
 }
@@ -78,7 +77,7 @@ function MemberList({ members }: MemberListProps) {
         .sort((a, b) => a.position - b.position)
     return ranksSort.map(
         ({ description, digs, mc_name, mc_uuid, rank, roles }) => (
-            <Member
+            <MemberCard
                 digs={digs}
                 rank={rank}
                 description={description}

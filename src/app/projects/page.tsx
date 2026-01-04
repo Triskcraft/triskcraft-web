@@ -1,6 +1,5 @@
-//app/Proyectos/page.jsx
-import Comounirse from '@/components/ComoUnirse'
-import Videocard from '@/components/videocard'
+import { HowToJoin } from '@/components/ComoUnirse'
+import { VideoCard } from '@/components/video-card'
 
 export default function Proyectos() {
     return (
@@ -20,14 +19,14 @@ export default function Proyectos() {
                         <h3 className='m-4 text-2xl font-bold text-white'>
                             Concrete Selector
                         </h3>
-                        <Videocard
+                        <VideoCard
                             id='p00yOMQQpMc'
-                            nombre='Concrete Selector 96k/h'
+                            name='Concrete Selector 96k/h'
                         />
                     </div>
                 </div>
             </div>
-            <Comounirse />
+            <HowToJoin />
         </div>
     )
 }

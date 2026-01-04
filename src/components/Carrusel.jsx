@@ -1,10 +1,9 @@
 'use client'
 
-// src/components/Carrusel.jsx
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-export default function Carrusel({ images }) {
+export function Carrusel({ images }) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const nextSlide = () => {
