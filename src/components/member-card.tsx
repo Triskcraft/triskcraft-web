@@ -5,7 +5,7 @@ const isURL = (text: string) => {
     try {
         new URL(text)
         return true
-    } catch (error) {
+    } catch {
         return false
     }
 }
@@ -18,7 +18,7 @@ interface MemberProps {
     description: string
     digs: number
 }
-export function Member({
+export function MemberCard({
     id,
     name,
     rank,

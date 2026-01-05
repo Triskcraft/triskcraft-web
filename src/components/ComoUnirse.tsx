@@ -1,7 +1,6 @@
-import React from 'react'
 import Image from 'next/image'
 
-const Comounirse = () => {
+export function HowToJoin() {
     return (
         <div className='relative overflow-hidden rounded-3xl border border-triskgold/25 bg-gradient-to-r from-[#0a1b15] via-triskgreen to-[#0f3229] p-8 shadow-2xl md:p-12'>
             <p className='inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-triskgold'>
@@ -101,5 +100,3 @@ const Comounirse = () => {
         </div>
     )
 }
-
-export default Comounirse

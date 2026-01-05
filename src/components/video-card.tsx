@@ -1,11 +1,15 @@
-import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
-const Videocard = ({ id, nombre }) => {
+interface VideoCardProps {
+    id: string
+    name: string
+}
+export function VideoCard({ id, name }: VideoCardProps) {
     const videoUrl = `https://www.youtube.com/watch?v=${id}`
 
     return (
-        <a
+        <Link
             href={videoUrl}
             target='_blank'
             rel='noopener noreferrer'
@@ -15,7 +19,7 @@ const Videocard = ({ id, nombre }) => {
             <div className='relative overflow-hidden rounded-xl border border-white/10'>
                 <Image
                     src={`https://img.youtube.com/vi/${id}/sddefault.jpg`}
-                    alt={`${nombre}`}
+                    alt={`${name}`}
                     width={480}
                     height={270}
                     className='h-72 w-full object-cover transition duration-300 group-hover:scale-105'
@@ -27,12 +31,10 @@ const Videocard = ({ id, nombre }) => {
                         TriskCraft
                     </span>
                     <h3 className='text-lg font-semibold leading-tight text-white'>
-                        {nombre}
+                        {name}
                     </h3>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
-
-export default Videocard

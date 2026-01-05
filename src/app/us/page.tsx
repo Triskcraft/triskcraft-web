@@ -1,5 +1,5 @@
 //app/Nosotros/page.jsx
-import Comounirse from '@/components/ComoUnirse'
+import { HowToJoin } from '@/components/ComoUnirse'
 import Image from 'next/image'
 
 export default function Nosotros() {
@@ -68,7 +68,7 @@ export default function Nosotros() {
                     </div>
                 </div>
             </div>
-            <Comounirse />
+            <HowToJoin />
         </div>
     )
 }
