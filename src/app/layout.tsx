@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+    metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     title: 'Triskcraft SMP',
     description: 'SMP dedicado a Minecraft Tecnico, Redstone y Decoracion.',
 }
