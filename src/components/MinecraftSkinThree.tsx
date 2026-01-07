@@ -6,11 +6,13 @@ import {
     BoxGeometry,
     DirectionalLight,
     Group,
+    Material,
     Mesh,
-    MeshStandardMaterial,
+    MeshLambertMaterial,
     NearestFilter,
     PerspectiveCamera,
     Scene,
+    SRGBColorSpace,
     TextureLoader,
     WebGLRenderer,
 } from 'three'
@@ -29,7 +31,10 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
         const scene = new Scene()
 
         // cámara
-        const camera = new PerspectiveCamera(45, 300 / 600, 0.1, 100)
+
+        const width = 400
+        const height = 600
+        const camera = new PerspectiveCamera(45, width / height, 0.1, 100)
         camera.position.set(0, 1.6, 6)
 
         // renderer
@@ -37,7 +42,8 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
             alpha: true,
             antialias: true,
         })
-        renderer.setSize(300, 600)
+        renderer.outputColorSpace = SRGBColorSpace
+        renderer.setSize(width, height)
         current.appendChild(renderer.domElement)
 
         // luz
@@ -50,8 +56,9 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
         const texture = new TextureLoader().load(skin)
         texture.magFilter = NearestFilter
         texture.minFilter = NearestFilter
+        texture.colorSpace = SRGBColorSpace
 
-        const material = new MeshStandardMaterial({
+        const material = new MeshLambertMaterial({
             map: texture,
             transparent: true,
             alphaTest: 0.5,
@@ -65,19 +72,19 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
         body.position.y = 0.45
         group.add(body)
         const rightArm = createRightArm(material)
-        rightArm.position.y = 0.95
+        rightArm.position.y = 1.15
         rightArm.position.x = -0.75
         group.add(rightArm)
         const leftArm = createLeftArm(material)
-        leftArm.position.y = 0.95
+        leftArm.position.y = 1.15
         leftArm.position.x = 0.75
         group.add(leftArm)
         const leftleg = createLeftLeg(material)
-        leftleg.position.y = -0.55
+        leftleg.position.y = -0.35
         leftleg.position.x = 0.25
         group.add(leftleg)
         const rightLeg = createRightLeg(material)
-        rightLeg.position.y = -0.55
+        rightLeg.position.y = -0.35
         rightLeg.position.x = -0.25
         group.add(rightLeg)
         group.position.y = 1.5
@@ -113,13 +120,13 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
         let yaw = 0 // rotación Y (izq / der)
         let pitch = 0 // rotación X (arriba / abajo)
 
-        current.addEventListener('mousedown', e => {
+        renderer.domElement.addEventListener('mousedown', e => {
             isDragging = true
             prevX = e.clientX
             prevY = e.clientY
         })
 
-        current.addEventListener('mousemove', e => {
+        renderer.domElement.addEventListener('mousemove', e => {
             if (!isDragging) return
 
             const dx = e.clientX - prevX
@@ -150,7 +157,7 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
             renderer.dispose()
             current?.removeChild(renderer.domElement)
         }
-    }, [containerRef])
+    }, [containerRef, skin])
 
     return <div className='h-screen' ref={containerRef} />
 }
@@ -205,7 +212,7 @@ function setFaceUV(
     })
 }
 
-function createHead(material: MeshStandardMaterial) {
+function createHead(material: Material) {
     const headGroup = new Group()
 
     // cabeza
@@ -213,10 +220,10 @@ function createHead(material: MeshStandardMaterial) {
 
     // UVs Minecraft (skin 64x64)
     setFaceUV(headGeo, 1, 0, 8, 8, 8, { flipX: true }) // left
-    setFaceUV(headGeo, 4, 8, 8, 8, 8) // front
+    setFaceUV(headGeo, 4, 8, 8, 8, 8, { flipX: true }) // front
     setFaceUV(headGeo, 0, 16, 8, 8, 8, { flipX: true }) // right
-    setFaceUV(headGeo, 5, 24, 8, 8, 8) // back
-    setFaceUV(headGeo, 2, 8, 0, 8, 8) // top
+    setFaceUV(headGeo, 5, 24, 8, 8, 8, { flipX: true }) // back
+    setFaceUV(headGeo, 2, 8, 0, 8, 8, { flipX: true }) // top
     setFaceUV(headGeo, 3, 16, 0, 8, 8, { rotate180: true }) // bottom
 
     const head = new Mesh(headGeo, material)
@@ -227,7 +234,7 @@ function createHead(material: MeshStandardMaterial) {
 
     // UVs Minecraft (skin 64x64)
     setFaceUV(hatGeo, 1, 32, 8, 8, 8, { flipX: true }) // left
-    setFaceUV(hatGeo, 4, 40, 8, 8, 8) // front
+    setFaceUV(hatGeo, 4, 40, 8, 8, 8, { flipX: true }) // front
     setFaceUV(hatGeo, 0, 48, 8, 8, 8, { flipX: true }) // right
     setFaceUV(hatGeo, 5, 56, 8, 8, 8, { flipX: true }) // back
     setFaceUV(hatGeo, 2, 40, 0, 8, 8, { flipX: true }) // top
@@ -238,7 +245,7 @@ function createHead(material: MeshStandardMaterial) {
     return headGroup
 }
 
-function createBody(material: MeshStandardMaterial) {
+function createBody(material: Material) {
     const group = new Group()
 
     // cabeza
@@ -271,7 +278,7 @@ function createBody(material: MeshStandardMaterial) {
     return group
 }
 
-function createRightArm(material: MeshStandardMaterial) {
+function createRightArm(material: Material) {
     const armGeo = new BoxGeometry(0.5, 1.5, 0.5)
 
     setFaceUV(armGeo, 1, 40, 20, 4, 12, { flipX: true }) // left
@@ -290,7 +297,7 @@ function createRightArm(material: MeshStandardMaterial) {
     setFaceUV(armOverlayGeo, 2, 44, 32, 4, 4) // top
     setFaceUV(armOverlayGeo, 3, 48, 32, 4, 4, { rotate180: true }) // bottom
 
-    const position = -0.5
+    const position = -0.7
     const arm = new Mesh(armGeo, material)
     arm.position.y = position
     const sleeve = new Mesh(armOverlayGeo, material)
@@ -304,7 +311,7 @@ function createRightArm(material: MeshStandardMaterial) {
     return group
 }
 
-function createLeftArm(material: MeshStandardMaterial) {
+function createLeftArm(material: Material) {
     const armGeo = new BoxGeometry(0.5, 1.5, 0.5)
 
     setFaceUV(armGeo, 1, 32, 52, 4, 12, { flipX: true }) // left
@@ -323,7 +330,7 @@ function createLeftArm(material: MeshStandardMaterial) {
     setFaceUV(armOverlayGeo, 2, 52, 48, 4, 4) // top
     setFaceUV(armOverlayGeo, 3, 56, 48, 4, 4, { rotate180: true }) // bottom
 
-    const position = -0.5
+    const position = -0.7
     const arm = new Mesh(armGeo, material)
     arm.position.y = position
     const sleeve = new Mesh(armOverlayGeo, material)
@@ -337,7 +344,7 @@ function createLeftArm(material: MeshStandardMaterial) {
     return armGroup
 }
 
-function createLeftLeg(material: MeshStandardMaterial) {
+function createLeftLeg(material: Material) {
     const armGeo = new BoxGeometry(0.5, 1.5, 0.5)
 
     setFaceUV(armGeo, 1, 16, 52, 4, 12, { flipX: true }) // left
@@ -356,7 +363,7 @@ function createLeftLeg(material: MeshStandardMaterial) {
     setFaceUV(armOverlayGeo, 2, 4, 48, 4, 4, { flipX: true }) // top
     setFaceUV(armOverlayGeo, 3, 8, 48, 4, 4, { flipX: true }) // bottom
 
-    const position = -0.5
+    const position = -0.7
     const arm = new Mesh(armGeo, material)
     arm.position.y = position
     const sleeve = new Mesh(armOverlayGeo, material)
@@ -370,7 +377,7 @@ function createLeftLeg(material: MeshStandardMaterial) {
     return armGroup
 }
 
-function createRightLeg(material: MeshStandardMaterial) {
+function createRightLeg(material: Material) {
     const armGeo = new BoxGeometry(0.5, 1.5, 0.5)
 
     setFaceUV(armGeo, 1, 0, 20, 4, 12, { flipX: true }) // left
@@ -389,7 +396,7 @@ function createRightLeg(material: MeshStandardMaterial) {
     setFaceUV(armOverlayGeo, 2, 4, 48, 4, 4, { flipX: true }) // top
     setFaceUV(armOverlayGeo, 3, 8, 48, 4, 4, { flipX: true }) // bottom
 
-    const position = -0.5
+    const position = -0.7
     const arm = new Mesh(armGeo, material)
     arm.position.y = position
     const sleeve = new Mesh(armOverlayGeo, material)
