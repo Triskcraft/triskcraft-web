@@ -20,7 +20,7 @@ import {
 interface MinecraftSkinThreeProps {
     skin: string
 }
-export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
+export function Skin3D({ skin }: MinecraftSkinThreeProps) {
     const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -96,13 +96,22 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
         let last = 0
         const speed = 4
         const maxAngle = 0.6
+
+        let isDragging = false
+        let prevX = 0
+        let prevY = 0
+
+        let yaw = 0 // rotación Y (izq / der)
+        let pitch = 0 // rotación X (arriba / abajo)
+
         function animate(time: number) {
             frameId = requestAnimationFrame(animate)
 
             if (time - last < 1000 / fps) return
             last = time
 
-            group.rotation.y -= 0.005
+            yaw -= 0.005
+            group.rotation.y = yaw
             const t = time / 1000
             leftArm.rotation.x = Math.sin(t * speed) * maxAngle
             rightArm.rotation.x = -(Math.sin(t * speed) * maxAngle)
@@ -112,13 +121,6 @@ export function MinecraftSkinThree({ skin }: MinecraftSkinThreeProps) {
             renderer.render(scene, camera)
         }
         animate(0)
-
-        let isDragging = false
-        let prevX = 0
-        let prevY = 0
-
-        let yaw = 0 // rotación Y (izq / der)
-        let pitch = 0 // rotación X (arriba / abajo)
 
         renderer.domElement.addEventListener('mousedown', e => {
             isDragging = true

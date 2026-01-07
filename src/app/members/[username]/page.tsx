@@ -1,8 +1,8 @@
-import { MinecraftSkinThree } from '@/components/MinecraftSkinThree'
+import { Skin3D } from '@/components/3d-skin'
 
 export default async function MemberPage({
     params,
 }: PageProps<'/members/[username]'>) {
     const { username } = await params
-    return <MinecraftSkinThree skin={`https://mc-heads.net/skin/${username}`} />
+    return <Skin3D skin={`https://mc-heads.net/skin/${username}`} />
 }
