@@ -4,6 +4,7 @@ import { HowToJoin } from '@/components/ComoUnirse'
 import { VideoCard } from '@/components/video-card'
 import DigTotal from '@/components/DigsTotal'
 import Link from 'next/link'
+import app from '@eliyya/type-routes'
 
 export default function HomePage() {
     const images = [
@@ -41,20 +42,20 @@ export default function HomePage() {
                             innovador.
                         </p>
                         <div className='flex flex-wrap items-center gap-4'>
-                            <a
+                            <Link
                                 href='https://discord.com/invite/VJQJRZehTG'
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='inline-flex items-center justify-center gap-2 rounded-full bg-triskgold px-6 py-3 text-lg font-semibold text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
                             >
                                 Unirme al servidor
-                            </a>
-                            <a
-                                href='/Proyectos'
+                            </Link>
+                            <Link
+                                href={app.projects()}
                                 className='inline-flex items-center justify-center gap-2 rounded-full border border-triskgold/60 px-6 py-3 text-lg font-semibold text-triskgold transition hover:-translate-y-0.5 hover:bg-triskgold/10'
                             >
                                 Ver proyectos
-                            </a>
+                            </Link>
                         </div>
 
                         <div className='grid grid-cols-1 gap-4 pt-4 sm:grid-cols-3'>
