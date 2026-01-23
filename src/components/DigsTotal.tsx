@@ -1,47 +1,28 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { getActiveMembersAction } from '@/actions/members.actions'
+import type { Member } from '@/types'
 
-const DigTotal = ({ cantidad }) => {
-    const [data, setData] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+const MAX_PLAYERS = 10
+
+function DigsTable() {
+    const [data, setData] = useState<Member[]>([])
+    const total = data.reduce((a, b) => a + b.digs, 0)
 
     useEffect(() => {
-        fetch('/data.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al cargar los datos')
-                }
-                return response.json()
+        const fetchData = () =>
+            getActiveMembersAction().then(data => {
+                setData(
+                    data.sort((a, b) => b.digs - a.digs).slice(0, MAX_PLAYERS),
+                )
             })
-            .then(data => {
-                setData(data)
-                setLoading(false)
-            })
-            .catch(error => {
-                setError(error.message)
-                setLoading(false)
-            })
+        fetchData()
+        const interval = setInterval(() => {
+            fetchData()
+        }, 10_000)
+
+        return () => clearInterval(interval)
     }, [])
-
-    if (loading) {
-        return <p className='text-center text-white/80'>Cargando...</p>
-    }
-
-    if (error) {
-        return <p className='text-center text-red-300'>Error: {error}</p>
-    }
-
-    const scoresArray = Object.keys(data).map(key => ({
-        name: key,
-        score: data[key],
-    }))
-
-    const sortedScores = scoresArray.sort((a, b) => b.score - a.score)
-
-    const topScores = sortedScores.slice(0, parseInt(cantidad, 10))
-
-    const totalScore = scoresArray.reduce((sum, user) => sum + user.score, 0)
 
     return (
         <div className='relative overflow-hidden rounded-3xl border border-triskgold/25 bg-gradient-to-r from-[#0c1f19] via-triskgreen to-[#103429] p-8 shadow-2xl'>
@@ -57,7 +38,7 @@ const DigTotal = ({ cantidad }) => {
                             Top Jugadores
                         </h2>
                         <p className='max-w-2xl text-lg text-white/75'>
-                            Top {cantidad} jugadores con más bloques minados
+                            Top {MAX_PLAYERS} jugadores con más bloques minados
                             dentro del servidor. El tablero se actualiza
                             automáticamente con la actividad de la comunidad.
                         </p>
@@ -67,7 +48,7 @@ const DigTotal = ({ cantidad }) => {
                             Total minado
                         </p>
                         <p className='text-2xl font-bold text-white'>
-                            {totalScore.toLocaleString()}
+                            {total.toLocaleString('es-MX')}
                         </p>
                         <p
                             className='text-xs text-white/60'
@@ -92,10 +73,10 @@ const DigTotal = ({ cantidad }) => {
                             <tr className='border-b border-white/5 bg-white/5 font-semibold text-white'>
                                 <td className='px-4 py-3'>Total</td>
                                 <td className='px-4 py-3 text-right'>
-                                    {totalScore.toLocaleString()}
+                                    {total.toLocaleString('es-MX')}
                                 </td>
                             </tr>
-                            {topScores.map((user, index) => (
+                            {data.map((user, index) => (
                                 <tr
                                     key={index}
                                     className='border-b border-white/5 text-white transition hover:bg-white/5'
@@ -104,10 +85,10 @@ const DigTotal = ({ cantidad }) => {
                                         <span className='mr-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-triskgold/20 text-xs font-bold text-triskgold'>
                                             #{index + 1}
                                         </span>
-                                        {user.name}
+                                        {user.mc_name}
                                     </td>
                                     <td className='px-4 py-3 text-right font-semibold text-triskgold'>
-                                        {user.score.toLocaleString()}
+                                        {user.digs.toLocaleString('es-MX')}
                                     </td>
                                 </tr>
                             ))}
@@ -119,4 +100,4 @@ const DigTotal = ({ cantidad }) => {
     )
 }
 
-export default DigTotal
+export default DigsTable

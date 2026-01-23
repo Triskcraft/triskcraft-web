@@ -1,7 +1,7 @@
 {
     "recommendations": [
         "WillLuke.nextjs",
-        "prettier.prettier-vscode",
+        "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
         "csstools.postcss",
         "vunguyentuan.vscode-postcss",
