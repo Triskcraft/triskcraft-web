@@ -1,12 +1,13 @@
-//src/app/components/page.jsx
 import { Carrusel } from '@/components/Carrusel'
 import { HowToJoin } from '@/components/ComoUnirse'
 import { VideoCard } from '@/components/video-card'
-import DigTotal from '@/components/DigsTotal'
+import { DigsTable } from '@/components/DigsTotal'
 import Link from 'next/link'
 import app from '@eliyya/type-routes'
 
-export default function HomePage() {
+export const revalidate = 43200
+
+export default async function HomePage() {
     const images = [
         '/img5.webp',
         '/img1.webp',
@@ -143,7 +144,7 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <DigTotal cantidad={8} />
+            <DigsTable />
         </div>
     )
 }
