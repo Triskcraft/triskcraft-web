@@ -1,10 +1,11 @@
-//src/app/components/page.jsx
 import { Carrusel } from '@/components/Carrusel'
 import { HowToJoin } from '@/components/ComoUnirse'
 import { VideoCard } from '@/components/video-card'
-import DigsTable from '@/components/DigsTotal'
+import { DigsTable } from '@/components/DigsTotal'
 import Link from 'next/link'
 import app from '@eliyya/type-routes'
+
+export const revalidate = 43200
 
 export default async function HomePage() {
     const images = [
