@@ -1,28 +1,10 @@
-'use client'
-import { useEffect, useState } from 'react'
 import { getActiveMembersAction } from '@/actions/members.actions'
-import type { Member } from '@/types'
 
 const MAX_PLAYERS = 10
 
-function DigsTable() {
-    const [data, setData] = useState<Member[]>([])
+export async function DigsTable() {
+    const data = await getActiveMembersAction()
     const total = data.reduce((a, b) => a + b.digs, 0)
-
-    useEffect(() => {
-        const fetchData = () =>
-            getActiveMembersAction().then(data => {
-                setData(
-                    data.sort((a, b) => b.digs - a.digs).slice(0, MAX_PLAYERS),
-                )
-            })
-        fetchData()
-        const interval = setInterval(() => {
-            fetchData()
-        }, 10_000)
-
-        return () => clearInterval(interval)
-    }, [])
 
     return (
         <div className='relative overflow-hidden rounded-3xl border border-triskgold/25 bg-gradient-to-r from-[#0c1f19] via-triskgreen to-[#103429] p-8 shadow-2xl'>
@@ -76,22 +58,25 @@ function DigsTable() {
                                     {total.toLocaleString('es-MX')}
                                 </td>
                             </tr>
-                            {data.map((user, index) => (
-                                <tr
-                                    key={index}
-                                    className='border-b border-white/5 text-white transition hover:bg-white/5'
-                                >
-                                    <td className='px-4 py-3'>
-                                        <span className='mr-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-triskgold/20 text-xs font-bold text-triskgold'>
-                                            #{index + 1}
-                                        </span>
-                                        {user.mc_name}
-                                    </td>
-                                    <td className='px-4 py-3 text-right font-semibold text-triskgold'>
-                                        {user.digs.toLocaleString('es-MX')}
-                                    </td>
-                                </tr>
-                            ))}
+                            {data
+                                .sort((a, b) => b.digs - a.digs)
+                                .slice(0, 10)
+                                .map((user, index) => (
+                                    <tr
+                                        key={index}
+                                        className='border-b border-white/5 text-white transition hover:bg-white/5'
+                                    >
+                                        <td className='px-4 py-3'>
+                                            <span className='mr-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-triskgold/20 text-xs font-bold text-triskgold'>
+                                                #{index + 1}
+                                            </span>
+                                            {user.mc_name}
+                                        </td>
+                                        <td className='px-4 py-3 text-right font-semibold text-triskgold'>
+                                            {user.digs.toLocaleString('es-MX')}
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>
@@ -99,5 +84,3 @@ function DigsTable() {
         </div>
     )
 }
-
-export default DigsTable
