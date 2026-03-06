@@ -64,6 +64,9 @@ export function Navbar() {
                         <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
                             <Link href={app.members()}>Miembros</Link>
                         </li>
+                        <li className='transition hover:text-triskgold/100 hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
+                            <Link href={app.blog()}>Blog</Link>
+                        </li>
                         <li>
                             <Link
                                 href='https://discord.com/invite/VJQJRZehTG'
