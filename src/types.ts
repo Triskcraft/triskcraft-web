@@ -10,3 +10,12 @@ export interface Member {
         url: string
     }>
 }
+
+export interface BlogPost {
+    id: string
+    title: string
+    author: string
+    created_at: string
+    excerpt: string
+    slug: string
+}
