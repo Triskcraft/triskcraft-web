@@ -70,10 +70,18 @@ export function Navbar() {
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 prefetch={false}
-                                className='inline-flex items-center gap-2 rounded-full bg-triskgold px-4 py-2 text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
+                                className='mr-0.5 inline-flex items-center gap-2 rounded-l-full bg-triskgold px-4 py-2 text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
                             >
                                 Únete al Discord
                             </Link>
+
+                            <a
+                                href='public/mods/pack-mods-triskcraftsmp.rar'
+                                download
+                                className='ml-0.5 inline-flex items-center gap-2 rounded-r-full bg-triskgold px-4 py-2 text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
+                            >
+                                Mods
+                            </a>
                         </li>
                     </ul>
                 </nav>
