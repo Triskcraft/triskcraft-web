@@ -17,6 +17,8 @@ jobs:
                   username: deploy
                   key: ${{ secrets.VPS_SSH_KEY }}
                   script: |
+                      set -e
+
                       echo "Deploy iniciado..."
 
                       cd /opt/bot/triskweb
