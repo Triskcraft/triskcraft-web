@@ -20,8 +20,7 @@ export function VideoCard({ id, name }: VideoCardProps) {
                 <Image
                     src={`https://img.youtube.com/vi/${id}/sddefault.jpg`}
                     alt={`${name}`}
-                    width={923}
-                    height={480}
+                    fill={true}
                     className='aspect-video object-cover transition duration-300 group-hover:scale-105'
                 />
             </div>
