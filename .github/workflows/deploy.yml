@@ -21,17 +21,15 @@ jobs:
 
                       echo "Deploy iniciado..."
 
-                      cd /opt/bot/triskweb
-
                       echo "Actualizando código..."
-                      sudo -u bot git fetch origin
-                      sudo -u bot git reset --hard origin/main
+                      sudo -u bot bash -c "cd /opt/bot/triskweb && git fetch origin"
+                      sudo -u bot bash -c "cd /opt/bot/triskweb && git reset --hard origin/main"
 
                       echo "Instalando dependencias..."
-                      sudo -u bot npm ci
+                      sudo -u bot bash -c "cd /opt/bot/triskweb && npm ci"
 
                       echo "Generando build..."
-                      sudo -u bot npm run build
+                      sudo -u bot bash -c "cd /opt/bot/triskweb && npm run build"
 
                       echo "Reiniciando servicio..."
                       sudo systemctl restart triskweb
