@@ -20,16 +20,17 @@ jobs:
                       set -euxo pipefail
 
                       echo "Deploy iniciado..."
+                      cd /opt/web/triskweb
 
                       echo "Actualizando código..."
-                      sudo -u web bash -c "cd /opt/web/triskweb && git fetch origin"
-                      sudo -u web bash -c "cd /opt/web/triskweb && git reset --hard origin/main"
+                      sudo -u web git fetch origin
+                      sudo -u web git reset --hard origin/main
 
                       echo "Instalando dependencias..."
-                      sudo -u web bash -c "cd /opt/web/triskweb && npm ci"
+                      sudo -u web npm ci
 
                       echo "Generando build..."
-                      sudo -u web bash -c "cd /opt/web/triskweb && npm run build"
+                      sudo -u web npm run build
 
                       echo "Reiniciando servicio..."
                       sudo systemctl restart triskweb
