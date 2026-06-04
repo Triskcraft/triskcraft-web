@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import app from '@eliyya/type-routes'
+import { MODPACK_DOWNLOAD_URL } from '@/constant/api'
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -76,8 +77,9 @@ export function Navbar() {
                             </Link>
 
                             <Link
-                                href='public/mods/pack-mods-triskcraftsmp.rar'
+                                href={MODPACK_DOWNLOAD_URL}
                                 download
+                                prefetch={false}
                                 className='ml-0.5 inline-flex items-center gap-2 rounded-r-full bg-triskgold px-4 py-2 text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
                             >
                                 Mods
