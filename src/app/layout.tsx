@@ -17,9 +17,9 @@ export const viewport = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
     return (
         <html lang='es'>
-            <body className='min-h-screen bg-gradient-to-b from-triskgreen via-[#0b261e] to-black text-white'>
+            <body className='flex min-h-screen flex-col bg-gradient-to-b from-triskgreen via-[#0b261e] to-black text-white'>
                 <Navbar />
-                <main>{children}</main>
+                <main className='flex-1'>{children}</main>
                 <Footer />
             </body>
         </html>

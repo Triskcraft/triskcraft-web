@@ -41,6 +41,13 @@ export function Footer() {
                     >
                         Miembros
                     </Link>
+
+                    <Link
+                        href={app.blog()}
+                        className='mx-4 transition-colors hover:text-white'
+                    >
+                        Blog
+                    </Link>
                 </div>
 
                 <div className='mb-6 flex justify-center space-x-8 md:space-x-16'>

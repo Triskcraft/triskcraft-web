@@ -1,0 +1,42 @@
+name: Deploy Web
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Deploy via SSH
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                  host: ${{ secrets.VPS_HOST }}
+                  username: deploy
+                  key: ${{ secrets.VPS_SSH_KEY }}
+                  script: |
+                      set -euxo pipefail
+
+                      echo "Deploy iniciado..."
+                      cd /opt/web/triskweb
+
+                      echo "Actualizando código..."
+                      sudo -u web git fetch origin
+                      sudo -u web git reset --hard origin/main
+
+                      echo "Preparando pnpm..."
+                      sudo -u web corepack enable
+                      sudo -u web corepack prepare pnpm@10.32.1 --activate
+
+                      echo "Instalando dependencias..."
+                      sudo -u web pnpm install --frozen-lockfile
+
+                      echo "Generando build..."
+                      sudo -u web pnpm run build
+
+                      echo "Reiniciando servicio..."
+                      sudo systemctl restart triskweb
+
+                      echo "Deploy completado."
