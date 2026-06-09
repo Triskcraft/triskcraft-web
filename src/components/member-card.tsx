@@ -27,7 +27,7 @@ export function MemberCard({
     digs,
 }: MemberProps) {
     return (
-        <div className='m-2 my-10 min-h-[200px] min-w-[250px] rounded-2xl border border-triskgold/25 bg-white/5 p-6 text-white shadow-lg shadow-black/30 transition duration-300 hover:-translate-y-1 hover:shadow-2xl md:flex md:w-full md:max-w-sm md:flex-wrap md:items-center md:justify-between'>
+        <div className='border-triskgold/25 m-2 my-10 min-h-[200px] min-w-[250px] rounded-2xl border bg-white/5 p-6 text-white shadow-lg shadow-black/30 transition duration-300 hover:-translate-y-1 hover:shadow-2xl md:flex md:w-full md:max-w-sm md:flex-wrap md:items-center md:justify-between'>
             <div className='flex justify-center md:flex-shrink-0'>
                 <Image
                     src={`https://mc-heads.net/head/${id}`}
@@ -42,7 +42,7 @@ export function MemberCard({
                     {name}
                     <Medalla digs={digs} />
                 </h3>
-                <p className='text-sm text-triskgold/80'>{rank}</p>
+                <p className='text-triskgold/80 text-sm'>{rank}</p>
                 <p className='text-sm text-white/70'>{role}</p>
                 <p className='text-sm text-white/70'>
                     {isURL(description) ?
@@ -50,7 +50,7 @@ export function MemberCard({
                             href={description}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='font-semibold text-triskgold transition hover:text-white'
+                            className='text-triskgold font-semibold transition hover:text-white'
                         >
                             {'Redes sociales'}
                         </a>

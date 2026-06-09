@@ -7,7 +7,13 @@ type BlogGalleryProps = {
     media: BlogMedia[]
 }
 
-function MediaItem({ item, className }: { item: BlogMedia; className?: string }) {
+function MediaItem({
+    item,
+    className,
+}: {
+    item: BlogMedia
+    className?: string
+}) {
     if (item.media_type === 'VIDEO') {
         return (
             <video
@@ -82,7 +88,7 @@ export function BlogGallery({ media }: BlogGalleryProps) {
                         aria-label={`Ver ${item.filename}`}
                         className={`relative h-16 w-20 shrink-0 overflow-hidden rounded-lg border transition ${
                             index === activeIndex ?
-                                'border-triskgold ring-2 ring-triskgold/40'
+                                'border-triskgold ring-triskgold/40 ring-2'
                             :   'border-white/10 opacity-70 hover:opacity-100'
                         }`}
                     >
