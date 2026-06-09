@@ -19,19 +19,19 @@ export default async function HomePage() {
     return (
         <div className='relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10'>
             <div className='pointer-events-none absolute inset-0 -z-10 opacity-50 blur-3xl'>
-                <div className='absolute left-10 top-10 h-48 w-48 rounded-full bg-triskgold/20' />
-                <div className='absolute right-6 top-1/3 h-56 w-56 rounded-full bg-triskmint/30' />
-                <div className='absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-triskgold/10' />
+                <div className='bg-triskgold/20 absolute top-10 left-10 h-48 w-48 rounded-full' />
+                <div className='bg-triskmint/30 absolute top-1/3 right-6 h-56 w-56 rounded-full' />
+                <div className='bg-triskgold/10 absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full' />
             </div>
 
-            <div className='relative overflow-hidden rounded-3xl border border-triskgold/25 bg-gradient-to-r from-triskgreen via-[#12392f] to-triskmint shadow-2xl'>
+            <div className='border-triskgold/25 from-triskgreen to-triskmint relative overflow-hidden rounded-3xl border bg-gradient-to-r via-[#12392f] shadow-2xl'>
                 <div className='absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(214,175,63,0.25),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_30%)]' />
                 <div className='relative flex flex-col gap-10 p-8 md:flex-row md:items-center md:justify-between md:p-12'>
                     <div className='space-y-6 text-white md:w-1/2'>
-                        <div className='inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-triskgold'>
+                        <div className='text-triskgold inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.25em] uppercase'>
                             Comunidad Técnica
                         </div>
-                        <h1 className='text-4xl font-bold leading-tight text-white drop-shadow-lg sm:text-5xl'>
+                        <h1 className='text-4xl leading-tight font-bold text-white drop-shadow-lg sm:text-5xl'>
                             Triskcraft Network
                         </h1>
                         <p className='max-w-2xl text-lg text-white/80'>
@@ -47,13 +47,13 @@ export default async function HomePage() {
                                 href='https://discord.com/invite/VJQJRZehTG'
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='inline-flex items-center justify-center gap-2 rounded-full bg-triskgold px-6 py-3 text-lg font-semibold text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
+                                className='bg-triskgold text-triskgreen shadow-triskgold/30 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-lg font-semibold shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl'
                             >
                                 Unirme al servidor
                             </Link>
                             <Link
                                 href={app.projects()}
-                                className='inline-flex items-center justify-center gap-2 rounded-full border border-triskgold/60 px-6 py-3 text-lg font-semibold text-triskgold transition hover:-translate-y-0.5 hover:bg-triskgold/10'
+                                className='border-triskgold/60 text-triskgold hover:bg-triskgold/10 inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-lg font-semibold transition hover:-translate-y-0.5'
                             >
                                 Ver proyectos
                             </Link>
@@ -81,9 +81,9 @@ export default async function HomePage() {
                                     key={item.title}
                                     className='relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md shadow-black/30'
                                 >
-                                    <div className='absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-triskgold/5' />
+                                    <div className='to-triskgold/5 absolute inset-0 bg-gradient-to-br from-white/5 via-transparent' />
                                     <div className='relative flex flex-col gap-1'>
-                                        <span className='text-xs font-semibold uppercase tracking-wide text-triskgold'>
+                                        <span className='text-triskgold text-xs font-semibold tracking-wide uppercase'>
                                             {item.accent}
                                         </span>
                                         <h3 className='text-lg font-semibold text-white'>
@@ -98,8 +98,8 @@ export default async function HomePage() {
                         </div>
                     </div>
                     <div className='relative w-full md:w-1/2'>
-                        <div className='absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-triskgold/15 blur-2xl' />
-                        <div className='relative overflow-hidden rounded-3xl border border-triskgold/30 bg-black/40 shadow-xl backdrop-blur'>
+                        <div className='bg-triskgold/15 absolute inset-0 translate-x-4 translate-y-4 rounded-3xl blur-2xl' />
+                        <div className='border-triskgold/30 relative overflow-hidden rounded-3xl border bg-black/40 shadow-xl backdrop-blur'>
                             <Carrusel images={images} />
                         </div>
                     </div>
@@ -108,10 +108,10 @@ export default async function HomePage() {
 
             <HowToJoin />
 
-            <div className='w-full overflow-hidden rounded-3xl border border-triskgold/20 bg-gradient-to-r from-[#0a1b15] via-triskgreen to-[#0f2f23] p-8 shadow-2xl md:p-12'>
+            <div className='border-triskgold/20 via-triskgreen w-full overflow-hidden rounded-3xl border bg-gradient-to-r from-[#0a1b15] to-[#0f2f23] p-8 shadow-2xl md:p-12'>
                 <div className='flex flex-col gap-6 md:flex-row md:items-start md:justify-between'>
                     <div className='space-y-3 md:w-2/3'>
-                        <p className='inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-triskgold'>
+                        <p className='text-triskgold inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.25em] uppercase'>
                             Explora
                         </p>
                         <h2 className='text-3xl font-bold text-white drop-shadow-lg md:text-4xl'>
@@ -128,7 +128,7 @@ export default async function HomePage() {
                         href='https://www.youtube.com/@Triskcraft'
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='inline-flex items-center gap-2 rounded-full border border-triskgold/60 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-triskgold transition hover:bg-triskgold/15'
+                        className='border-triskgold/60 text-triskgold hover:bg-triskgold/15 inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold tracking-wide uppercase transition'
                     >
                         Más videos en YouTube
                     </Link>

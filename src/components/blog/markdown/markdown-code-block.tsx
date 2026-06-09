@@ -18,7 +18,7 @@ export function MarkdownCodeBlock({
     if (!match) {
         return (
             <code
-                className='rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-triskgold'
+                className='text-triskgold rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm'
                 {...props}
             >
                 {children}
@@ -29,9 +29,9 @@ export function MarkdownCodeBlock({
     const code = String(children).replace(/\n$/, '')
 
     return (
-        <div className='my-5 overflow-hidden rounded-xl border border-triskgold/20 bg-black/40'>
+        <div className='border-triskgold/20 my-5 overflow-hidden rounded-xl border bg-black/40'>
             {match[1] ?
-                <div className='flex items-center justify-between border-b border-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/40'>
+                <div className='flex items-center justify-between border-b border-white/5 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-white/40 uppercase'>
                     {match[1]}
                 </div>
             :   null}

@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 export function HowToJoin() {
     return (
-        <div className='relative overflow-hidden rounded-3xl border border-triskgold/25 bg-gradient-to-r from-[#0a1b15] via-triskgreen to-[#0f3229] p-8 shadow-2xl md:p-12'>
-            <p className='inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-triskgold'>
+        <div className='border-triskgold/25 via-triskgreen relative overflow-hidden rounded-3xl border bg-gradient-to-r from-[#0a1b15] to-[#0f3229] p-8 shadow-2xl md:p-12'>
+            <p className='text-triskgold inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.25em] uppercase'>
                 Únete
             </p>
             <div className='absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(214,175,63,0.25),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.08),transparent_30%)]' />
@@ -46,7 +46,7 @@ export function HowToJoin() {
                                 key={item.step}
                                 className='flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur'
                             >
-                                <span className='flex h-9 w-9 items-center justify-center rounded-full bg-triskgold text-base font-bold text-triskgreen shadow-lg shadow-triskgold/30'>
+                                <span className='bg-triskgold text-triskgreen shadow-triskgold/30 flex h-9 w-9 items-center justify-center rounded-full text-base font-bold shadow-lg'>
                                     {item.step}
                                 </span>
                                 <div>
@@ -66,7 +66,7 @@ export function HowToJoin() {
                             href='https://discord.com/invite/VJQJRZehTG'
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='inline-flex items-center justify-center gap-2 rounded-full bg-triskgold px-6 py-3 text-lg font-semibold text-triskgreen shadow-lg shadow-triskgold/30 transition hover:-translate-y-0.5 hover:shadow-xl'
+                            className='bg-triskgold text-triskgreen shadow-triskgold/30 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-lg font-semibold shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl'
                         >
                             Link de Discord
                         </a>
@@ -81,9 +81,9 @@ export function HowToJoin() {
                         href='https://discord.com/invite/VJQJRZehTG'
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='group relative inline-block overflow-hidden rounded-3xl border border-triskgold/30 bg-white/5 p-6 shadow-lg shadow-black/30 transition hover:-translate-y-1 hover:shadow-2xl'
+                        className='group border-triskgold/30 relative inline-block overflow-hidden rounded-3xl border bg-white/5 p-6 shadow-lg shadow-black/30 transition hover:-translate-y-1 hover:shadow-2xl'
                     >
-                        <div className='absolute inset-0 bg-gradient-to-br from-triskgold/10 via-transparent to-white/10 opacity-0 transition duration-300 group-hover:opacity-100' />
+                        <div className='from-triskgold/10 absolute inset-0 bg-gradient-to-br via-transparent to-white/10 opacity-0 transition duration-300 group-hover:opacity-100' />
                         <Image
                             src='https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg'
                             alt='Discord'
@@ -91,7 +91,7 @@ export function HowToJoin() {
                             height={320}
                             className='mx-auto drop-shadow-xl'
                         />
-                        <p className='mt-4 text-center text-sm font-semibold uppercase tracking-wide text-triskgold'>
+                        <p className='text-triskgold mt-4 text-center text-sm font-semibold tracking-wide uppercase'>
                             Comunícate con el Staff
                         </p>
                     </a>

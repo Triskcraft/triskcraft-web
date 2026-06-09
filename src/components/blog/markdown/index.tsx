@@ -20,30 +20,33 @@ const components: Components = {
     pre: ({ children }) => <>{children}</>,
     a: ({ node, ...props }) => (
         <a
-            className='font-semibold text-triskgold underline-offset-4 transition hover:text-white hover:underline'
+            className='text-triskgold font-semibold underline-offset-4 transition hover:text-white hover:underline'
             target={props.href?.startsWith('http') ? '_blank' : undefined}
-            rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+            rel={
+                props.href?.startsWith('http') ?
+                    'noopener noreferrer'
+                :   undefined
+            }
             {...props}
         />
     ),
     blockquote: ({ node, ...props }) => (
         <blockquote
-            className='my-5 border-l-4 border-triskgold/50 bg-white/[0.03] py-2 pl-4 italic text-white/70'
+            className='border-triskgold/50 my-5 border-l-4 bg-white/[0.03] py-2 pl-4 text-white/70 italic'
             {...props}
         />
     ),
     hr: () => <hr className='my-8 border-white/10' />,
     img: ({ node, ...props }) => (
         // eslint-disable-next-line @next/next/no-img-element
-        <img
-            className='my-5 rounded-xl'
-            alt={props.alt ?? ''}
-            {...props}
-        />
+        <img className='my-5 rounded-xl' alt={props.alt ?? ''} {...props} />
     ),
     table: ({ node, ...props }) => (
         <div className='my-5 overflow-x-auto rounded-xl border border-white/10'>
-            <table className='w-full border-collapse text-left text-sm' {...props} />
+            <table
+                className='w-full border-collapse text-left text-sm'
+                {...props}
+            />
         </div>
     ),
     th: ({ node, ...props }) => (
@@ -53,7 +56,10 @@ const components: Components = {
         />
     ),
     td: ({ node, ...props }) => (
-        <td className='border-b border-white/5 px-4 py-2 text-white/75' {...props} />
+        <td
+            className='border-b border-white/5 px-4 py-2 text-white/75'
+            {...props}
+        />
     ),
 }
 

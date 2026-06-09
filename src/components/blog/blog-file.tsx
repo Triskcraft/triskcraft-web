@@ -18,9 +18,9 @@ export function BlogFile({ media }: BlogFileProps) {
             target='_blank'
             rel='noopener noreferrer'
             download={media.filename}
-            className='my-4 flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-triskgold/40 hover:bg-white/[0.06]'
+            className='hover:border-triskgold/40 my-4 flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition hover:bg-white/[0.06]'
         >
-            <span className='flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-triskgold/15 text-triskgold'>
+            <span className='bg-triskgold/15 text-triskgold flex h-12 w-12 shrink-0 items-center justify-center rounded-lg'>
                 <FiFile className='h-6 w-6' />
             </span>
             <span className='min-w-0 flex-grow'>

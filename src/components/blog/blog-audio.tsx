@@ -16,7 +16,12 @@ export function BlogAudio({ media }: BlogAudioProps) {
                     {formatBytes(media.size)}
                 </span>
             </div>
-            <audio controls preload='metadata' className='w-full' src={media.url}>
+            <audio
+                controls
+                preload='metadata'
+                className='w-full'
+                src={media.url}
+            >
                 {media.filename}
             </audio>
         </div>

@@ -23,7 +23,9 @@ export async function getBlogPostsAction(): Promise<BlogPost[]> {
     return [...posts, ...MOCK_POSTS.filter(post => !realIds.has(post.id))]
 }
 
-export async function getBlogPostAction(slug: string): Promise<BlogPost | null> {
+export async function getBlogPostAction(
+    slug: string,
+): Promise<BlogPost | null> {
     try {
         const req = await fetch(`${API_BASE}/posts/${slug}`)
         if (req.status === 200) return (await req.json()) as BlogPost

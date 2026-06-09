@@ -24,7 +24,11 @@ function img(
     }
 }
 
-function gif(id: string, url: string, description: string | null = null): BlogMedia {
+function gif(
+    id: string,
+    url: string,
+    description: string | null = null,
+): BlogMedia {
     return {
         id,
         filename: `${id}.gif`,
@@ -39,7 +43,11 @@ function gif(id: string, url: string, description: string | null = null): BlogMe
     }
 }
 
-function video(id: string, url: string, description: string | null = null): BlogMedia {
+function video(
+    id: string,
+    url: string,
+    description: string | null = null,
+): BlogMedia {
     return {
         id,
         filename: `${id}.mp4`,
@@ -54,7 +62,11 @@ function video(id: string, url: string, description: string | null = null): Blog
     }
 }
 
-function audio(id: string, url: string, description: string | null = null): BlogMedia {
+function audio(
+    id: string,
+    url: string,
+    description: string | null = null,
+): BlogMedia {
     return {
         id,
         filename: `${id}.mp3`,
@@ -163,7 +175,11 @@ export const MOCK_POSTS: BlogPost[] = [
                 embeds: [],
                 media: [
                     img('iron-1', SAMPLE('trisk-iron-1'), 'Fachada principal'),
-                    img('iron-2', SAMPLE('trisk-iron-2'), 'Sistema de recolección'),
+                    img(
+                        'iron-2',
+                        SAMPLE('trisk-iron-2'),
+                        'Sistema de recolección',
+                    ),
                     img('iron-3', SAMPLE('trisk-iron-3'), 'Cofres de salida'),
                 ],
             },
@@ -248,13 +264,18 @@ export const MOCK_POSTS: BlogPost[] = [
                 media: [
                     video('base-tour', SAMPLE_VIDEO, 'Recorrido por la base'),
                     img('base-1', SAMPLE_SQ('trisk-base-1'), 'Sala de granjas'),
-                    img('base-2', SAMPLE_SQ('trisk-base-2'), 'Núcleo de redstone'),
+                    img(
+                        'base-2',
+                        SAMPLE_SQ('trisk-base-2'),
+                        'Núcleo de redstone',
+                    ),
                     gif('base-gif', SAMPLE_GIF, 'Mecanismo en movimiento'),
                 ],
             },
             {
                 timestamp: 1_740_528_120,
-                content: 'Y aquí la narración en audio con los detalles de construcción:',
+                content:
+                    'Y aquí la narración en audio con los detalles de construcción:',
                 components: [],
                 embeds: [],
                 media: [
