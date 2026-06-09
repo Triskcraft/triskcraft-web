@@ -27,13 +27,13 @@ jobs:
                       sudo -u web git reset --hard origin/main
 
                       echo "Verificando pnpm..."
-                      sudo -Hu web pnpm --version
+                      sudo -u web pnpm --version
 
                       echo "Instalando dependencias..."
-                      sudo -Hu web pnpm install --frozen-lockfile
+                      sudo -u web env CI=true pnpm install --frozen-lockfile
 
                       echo "Generando build..."
-                      sudo -Hu web pnpm run build
+                      sudo -u web pnpm run build
 
                       echo "Reiniciando servicio..."
                       sudo systemctl restart triskweb

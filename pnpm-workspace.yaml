@@ -1,0 +1,7 @@
+packages:
+    - .
+
+allowBuilds:
+    '@eliyya/type-routes': false
+    sharp: true
+    unrs-resolver: true
