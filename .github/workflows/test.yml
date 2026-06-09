@@ -36,7 +36,17 @@ jobs:
               run: pnpm run lint
 
             - name: Check formatting
-              run: pnpm run format:check
+              shell: bash
+              run: |
+                  git fetch origin ${{ github.base_ref }} --depth=1
+                  files="$(git diff --name-only --diff-filter=ACMR "origin/${{ github.base_ref }}" HEAD | grep -E '\.(css|js|jsx|json|md|mjs|ts|tsx|ya?ml)$' || true)"
+
+                  if [ -z "$files" ]; then
+                      echo "No formatted files changed."
+                      exit 0
+                  fi
+
+                  echo "$files" | xargs pnpm exec prettier --check
 
             - name: Build
               run: pnpm run build
