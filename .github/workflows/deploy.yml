@@ -26,11 +26,15 @@ jobs:
                       sudo -u web git fetch origin
                       sudo -u web git reset --hard origin/main
 
+                      echo "Preparando pnpm..."
+                      sudo -u web corepack enable
+                      sudo -u web corepack prepare pnpm@10.32.1 --activate
+
                       echo "Instalando dependencias..."
-                      sudo -u web npm ci
+                      sudo -u web pnpm install --frozen-lockfile
 
                       echo "Generando build..."
-                      sudo -u web npm run build
+                      sudo -u web pnpm run build
 
                       echo "Reiniciando servicio..."
                       sudo systemctl restart triskweb
