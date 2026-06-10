@@ -5,3 +5,6 @@ export const API_URL = (
 ).replace(/\/$/, '')
 
 export const MODPACK_DOWNLOAD_URL = `${API_URL}/files/web/pack-mods-triskcraftsmp.rar`
+
+export const DISCORD_GUILD_URL =
+    'https://discord.com/channels/1202732116102877246'
