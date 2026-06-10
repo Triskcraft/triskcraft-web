@@ -35,7 +35,10 @@ export async function GET(request: NextRequest) {
     }
 
     if (refreshToken) {
-        const redirectUri = new URL('/api/auth/callback', request.url).toString()
+        const redirectUri = new URL(
+            '/api/auth/callback',
+            request.url,
+        ).toString()
         const refreshResponse = await fetch(`${API_URL}/oauth/refresh`, {
             method: 'POST',
             headers: {

@@ -4,10 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import app from '@eliyya/type-routes'
-import {
-    DISCORD_GUILD_URL,
-    MODPACK_DOWNLOAD_URL,
-} from '@/constant/api'
+import { DISCORD_GUILD_URL, MODPACK_DOWNLOAD_URL } from '@/constant/api'
 import { useSessionStore } from '@/stores/session'
 
 export function Navbar() {
@@ -81,9 +78,9 @@ export function Navbar() {
                         <li>
                             <Link
                                 href={
-                                    isAuthenticated ?
-                                        DISCORD_GUILD_URL
-                                    :   '/api/auth/login'
+                                    isAuthenticated ? DISCORD_GUILD_URL : (
+                                        '/api/auth/login'
+                                    )
                                 }
                                 target={isAuthenticated ? '_blank' : undefined}
                                 rel={

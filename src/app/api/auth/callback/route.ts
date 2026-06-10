@@ -55,14 +55,10 @@ export async function GET(request: NextRequest) {
         maxAge: token.expires_in,
     })
     if (token.refresh_token) {
-        response.cookies.set(
-            'triskcraft-refresh-token',
-            token.refresh_token,
-            {
-                ...sessionCookieOptions,
-                maxAge: SESSION_MAX_AGE,
-            },
-        )
+        response.cookies.set('triskcraft-refresh-token', token.refresh_token, {
+            ...sessionCookieOptions,
+            maxAge: SESSION_MAX_AGE,
+        })
     }
     response.cookies.set('oauth-code-verifier', '', {
         path: '/api/auth',
