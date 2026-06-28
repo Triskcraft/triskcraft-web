@@ -29,8 +29,8 @@ export default async function MembersPage() {
                     </h3>
                     <p className='m-4 mb-6 py-2 text-lg text-white/75'>
                         Miembros que ya no son activos en el servidor, pero que
-                        queriamos darle un espacio, ya que sin su aporte este
-                        comunidad no seria lo mismo:
+                        queríamos darle un espacio, ya que sin su aporte esta
+                        comunidad no sería lo mismo:
                     </p>
                 </div>
                 <div className='flex w-full flex-wrap items-center justify-around'>
