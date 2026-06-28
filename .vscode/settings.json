@@ -13,7 +13,7 @@
         "source.fixAll.eslint": "always"
     },
     "[typescriptreact]": {
-        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"

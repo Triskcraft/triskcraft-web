@@ -2,6 +2,7 @@ import { withTypeRoute } from '@eliyya/type-routes/next'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    allowedDevOrigins: ['dev.eliyya.dev'],
     images: {
         remotePatterns: [
             {
