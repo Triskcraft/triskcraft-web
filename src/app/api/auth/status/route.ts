@@ -1,4 +1,4 @@
-import { API_URL } from '@/constant/api'
+import { API_URL, AUTH_CALLBACK_URL } from '@/constant/api'
 import { NextRequest, NextResponse } from 'next/server'
 
 const CLIENT_ID = 'triskcraft-web'
@@ -35,10 +35,6 @@ export async function GET(request: NextRequest) {
     }
 
     if (refreshToken) {
-        const redirectUri = new URL(
-            '/api/auth/callback',
-            request.url,
-        ).toString()
         const refreshResponse = await fetch(`${API_URL}/oauth/refresh`, {
             method: 'POST',
             headers: {
@@ -46,7 +42,7 @@ export async function GET(request: NextRequest) {
             },
             body: JSON.stringify({
                 grant_type: 'refresh_token',
-                redirect_uri: redirectUri,
+                redirect_uri: AUTH_CALLBACK_URL,
                 client_id: CLIENT_ID,
                 refresh_token: refreshToken,
             }),
