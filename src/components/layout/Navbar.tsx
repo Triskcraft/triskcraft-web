@@ -75,7 +75,7 @@ export function Navbar() {
                         <li className='hover:text-triskgold transition hover:drop-shadow-[0_0_10px_rgba(214,175,63,0.55)]'>
                             <Link href={app.blog()}>Blog</Link>
                         </li>
-                        <li>
+                        <li className='flex flex-nowrap text-nowrap'>
                             <Link
                                 href={
                                     isAuthenticated ? DISCORD_GUILD_URL : (
