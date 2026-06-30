@@ -1,4 +1,4 @@
-import { API_URL } from '@/constant/api'
+import { API_URL, NEXT_PUBLIC_SITE_URL } from '@/constant/api'
 import { createHash, randomBytes } from 'node:crypto'
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -11,7 +11,7 @@ export function GET(request: NextRequest) {
         .update(codeVerifier)
         .digest('base64url')
     const state = randomBytes(32).toString('base64url')
-    const redirectUri = new URL('/api/auth/callback', request.url).toString()
+    const redirectUri = new URL('/api/auth/callback', quest.url).toString()
     const authorizeUrl = new URL('/oauth/authorize', API_URL)
 
     authorizeUrl.search = new URLSearchParams({
