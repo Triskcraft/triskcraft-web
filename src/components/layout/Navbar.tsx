@@ -78,6 +78,7 @@ export function Navbar() {
                         <li className='flex flex-nowrap text-nowrap'>
                             <Link
                                 href='https://discord.com/invite/VJQJRZehTG'
+                                    
                                 className='bg-triskgold text-triskgreen shadow-triskgold/30 mr-0.5 inline-flex items-center gap-2 rounded-l-full px-4 py-2 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl'
                             >
                                 {isAuthenticated ?
