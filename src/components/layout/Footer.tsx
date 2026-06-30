@@ -11,12 +11,12 @@ import {
 
 export function Footer() {
     return (
-        <footer className='bg-gradient-to-b from-[#0a1f18] via-triskgreen to-black py-10 text-triskgold'>
+        <footer className='via-triskgreen text-triskgold bg-gradient-to-b from-[#0a1f18] to-black py-10'>
             <div className='container mx-auto px-4'>
                 <div className='mb-6 flex justify-center space-x-6 text-lg font-semibold md:space-x-20'>
                     <Link
                         href={app()}
-                        className='transition-colors hover:text-white'
+                        className='mx-4 transition-colors hover:text-white'
                     >
                         Inicio
                     </Link>
@@ -59,7 +59,7 @@ export function Footer() {
                     >
                         <FaYoutube
                             size={32}
-                            className='h-8 w-8 text-triskgold transition duration-200 hover:scale-110 hover:text-white'
+                            className='text-triskgold h-8 w-8 transition duration-200 hover:scale-110 hover:text-white'
                         />
                     </Link>
                     <Link
@@ -70,7 +70,7 @@ export function Footer() {
                     >
                         <FaTiktok
                             size={32}
-                            className='h-8 w-8 text-triskgold transition duration-200 hover:scale-110 hover:text-white'
+                            className='text-triskgold h-8 w-8 transition duration-200 hover:scale-110 hover:text-white'
                         />
                     </Link>
                     <Link
@@ -81,7 +81,7 @@ export function Footer() {
                     >
                         <FaDiscord
                             size={32}
-                            className='h-8 w-8 text-triskgold transition duration-200 hover:scale-110 hover:text-white'
+                            className='text-triskgold h-8 w-8 transition duration-200 hover:scale-110 hover:text-white'
                         />
                     </Link>
                     <Link
@@ -90,7 +90,7 @@ export function Footer() {
                         prefetch={false}
                         rel='noopener noreferrer'
                     >
-                        <FaTwitter className='h-8 w-8 text-triskgold transition duration-200 hover:scale-110 hover:text-white' />
+                        <FaTwitter className='text-triskgold h-8 w-8 transition duration-200 hover:scale-110 hover:text-white' />
                     </Link>
                     <Link
                         href='https://www.facebook.com/profile.php?id=61556143652619&sfnsn=scwspwa&mibextid=RUbZ1f'
@@ -100,7 +100,7 @@ export function Footer() {
                     >
                         <FaFacebook
                             size={32}
-                            className='h-8 w-8 text-triskgold transition duration-200 hover:scale-110 hover:text-white'
+                            className='text-triskgold h-8 w-8 transition duration-200 hover:scale-110 hover:text-white'
                         />
                     </Link>
                 </div>

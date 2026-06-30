@@ -5,8 +5,8 @@ import Image from 'next/image'
 export default function Nosotros() {
     return (
         <div className='relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10'>
-            <div className='md:py- container mx-auto flex max-w-6xl flex-col rounded-3xl border border-triskgold/20 bg-black/30 px-3 py-4 md:px-6'>
-                <h2 className='text-center text-4xl font-bold text-triskgold drop-shadow-lg'>
+            <div className='md:py- border-triskgold/20 container mx-auto flex max-w-6xl flex-col rounded-3xl border bg-black/30 px-3 py-4 md:px-6'>
+                <h2 className='text-triskgold text-center text-4xl font-bold drop-shadow-lg'>
                     Sobre nosotros
                 </h2>
                 <div className='m-2 my-20 flex w-full flex-wrap items-center justify-between'>

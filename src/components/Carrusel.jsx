@@ -34,7 +34,7 @@ export function Carrusel({ images }) {
             className='relative w-full'
             data-carousel='slide'
         >
-            <div className='relative h-56 overflow-hidden rounded-2xl border border-triskgold/20 bg-black/30 shadow-lg md:h-[26rem]'>
+            <div className='border-triskgold/20 relative h-56 overflow-hidden rounded-2xl border bg-black/30 shadow-lg md:h-[26rem]'>
                 {images.map((image, index) => (
                     <div
                         key={index}
@@ -57,7 +57,7 @@ export function Carrusel({ images }) {
                     <button
                         key={index}
                         type='button'
-                        className={`h-3 w-3 rounded-full border border-triskgold/50 ${
+                        className={`border-triskgold/50 h-3 w-3 rounded-full border ${
                             index === currentIndex ? 'bg-triskgold' : (
                                 'bg-white/30'
                             )
@@ -73,7 +73,7 @@ export function Carrusel({ images }) {
                 className='group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none'
                 onClick={prevSlide}
             >
-                <span className='inline-flex h-10 w-10 items-center justify-center rounded-full bg-triskgold/20 group-hover:bg-triskgold/40 group-focus:outline-none group-focus:ring-4 group-focus:ring-triskgold/50'>
+                <span className='bg-triskgold/20 group-hover:bg-triskgold/40 group-focus:ring-triskgold/50 inline-flex h-10 w-10 items-center justify-center rounded-full group-focus:ring-4 group-focus:outline-none'>
                     <svg
                         className='h-4 w-4 text-white rtl:rotate-180'
                         aria-hidden='true'
@@ -97,7 +97,7 @@ export function Carrusel({ images }) {
                 className='group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none'
                 onClick={nextSlide}
             >
-                <span className='inline-flex h-10 w-10 items-center justify-center rounded-full bg-triskgold/20 group-hover:bg-triskgold/40 group-focus:outline-none group-focus:ring-4 group-focus:ring-triskgold/50'>
+                <span className='bg-triskgold/20 group-hover:bg-triskgold/40 group-focus:ring-triskgold/50 inline-flex h-10 w-10 items-center justify-center rounded-full group-focus:ring-4 group-focus:outline-none'>
                     <svg
                         className='h-4 w-4 text-white rtl:rotate-180'
                         aria-hidden='true'

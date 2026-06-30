@@ -72,7 +72,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <article className='relative mx-auto w-full max-w-3xl px-4 py-10'>
             <Link
                 href='/blog'
-                className='mb-8 inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition hover:text-triskgold'
+                className='hover:text-triskgold mb-8 inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition'
             >
                 <FiArrowLeft className='h-4 w-4' />
                 Volver al blog
@@ -90,7 +90,7 @@ export default async function PostPage({ params }: PostPageProps) {
             :   null}
 
             <header className='mb-8 space-y-5'>
-                <h1 className='text-4xl font-bold leading-tight text-white sm:text-5xl'>
+                <h1 className='text-4xl leading-tight font-bold text-white sm:text-5xl'>
                     {post.title}
                 </h1>
 
@@ -131,7 +131,7 @@ export default async function PostPage({ params }: PostPageProps) {
                         {tags.map(tag => (
                             <li
                                 key={tag}
-                                className='rounded-full border border-triskgold/30 bg-triskgold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-triskgold'
+                                className='border-triskgold/30 bg-triskgold/10 text-triskgold rounded-full border px-3 py-1 text-xs font-semibold tracking-wide uppercase'
                             >
                                 {tag}
                             </li>

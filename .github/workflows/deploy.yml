@@ -26,12 +26,11 @@ jobs:
                       sudo -u web git fetch origin
                       sudo -u web git reset --hard origin/main
 
-                      echo "Preparando pnpm..."
-                      sudo -u web corepack enable
-                      sudo -u web corepack prepare pnpm@10.32.1 --activate
+                      echo "Verificando pnpm..."
+                      sudo -u web pnpm --version
 
                       echo "Instalando dependencias..."
-                      sudo -u web pnpm install --frozen-lockfile
+                      sudo -u web env CI=true pnpm install --frozen-lockfile
 
                       echo "Generando build..."
                       sudo -u web pnpm run build

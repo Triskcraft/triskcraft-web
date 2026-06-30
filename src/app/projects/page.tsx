@@ -4,10 +4,10 @@ import { VideoCard } from '@/components/video-card'
 export default function Proyectos() {
     return (
         <div className='relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10'>
-            <div className='md:py- container mx-auto flex max-w-6xl flex-col rounded-3xl border border-triskgold/20 bg-black/30 px-3 py-4 md:px-6'>
+            <div className='md:py- border-triskgold/20 container mx-auto flex max-w-6xl flex-col rounded-3xl border bg-black/30 px-3 py-4 md:px-6'>
                 <div className='flex flex-col px-4 py-6 md:px-10 md:py-0'>
                     <div className='px-6 text-center md:px-10'>
-                        <h2 className='text-center text-4xl font-bold text-triskgold drop-shadow-lg'>
+                        <h2 className='text-triskgold text-center text-4xl font-bold drop-shadow-lg'>
                             Proyectos
                         </h2>
                         <p className='m-4 mx-auto mb-6 w-full py-2 text-lg text-white/75 md:w-5/6'>
