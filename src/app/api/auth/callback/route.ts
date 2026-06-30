@@ -1,8 +1,4 @@
-import {
-    API_URL,
-    AUTH_CALLBACK_URL,
-    NEXT_PUBLIC_SITE_URL,
-} from '@/constant/api'
+import { API_URL } from '@/constant/api'
 import { NextRequest, NextResponse } from 'next/server'
 
 const CLIENT_ID = 'triskcraft-web'
@@ -13,13 +9,14 @@ export async function GET(request: NextRequest) {
     const state = request.nextUrl.searchParams.get('state')
     const codeVerifier = request.cookies.get('oauth-code-verifier')?.value
     const expectedState = request.cookies.get('oauth-state')?.value
-    const homeUrl = new URL('/', NEXT_PUBLIC_SITE_URL)
+    const homeUrl = new URL('/', request.url)
 
     if (!code || !state || state !== expectedState || !codeVerifier) {
         homeUrl.searchParams.set('auth_error', 'invalid_callback')
         return NextResponse.redirect(homeUrl)
     }
 
+    const redirectUri = new URL('/api/auth/callback', request.url).toString()
     const tokenResponse = await fetch(`${API_URL}/oauth/token`, {
         method: 'POST',
         headers: {
@@ -28,7 +25,7 @@ export async function GET(request: NextRequest) {
         body: JSON.stringify({
             grant_type: 'authorization_code',
             code,
-            redirect_uri: AUTH_CALLBACK_URL,
+            redirect_uri: redirectUri,
             client_id: CLIENT_ID,
             code_verifier: codeVerifier,
         }),
