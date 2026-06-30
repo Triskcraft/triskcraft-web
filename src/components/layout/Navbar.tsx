@@ -77,8 +77,18 @@ export function Navbar() {
                         </li>
                         <li className='flex flex-nowrap text-nowrap'>
                             <Link
-                                href='https://discord.com/invite/VJQJRZehTG'
-                                    
+                                href={
+                                    isAuthenticated ? DISCORD_GUILD_URL : (
+                                        '/api/auth/login'
+                                    )
+                                }
+                                target={isAuthenticated ? '_blank' : undefined}
+                                rel={
+                                    isAuthenticated ?
+                                        'noopener noreferrer'
+                                    :   undefined
+                                }
+                                prefetch={false}
                                 className='bg-triskgold text-triskgreen shadow-triskgold/30 mr-0.5 inline-flex items-center gap-2 rounded-l-full px-4 py-2 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl'
                             >
                                 {isAuthenticated ?
