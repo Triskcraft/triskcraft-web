@@ -1,8 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react'
 
 type MarkdownListProps = (
-    | ComponentPropsWithoutRef<'ul'>
-    | ComponentPropsWithoutRef<'ol'>
+    ComponentPropsWithoutRef<'ul'> | ComponentPropsWithoutRef<'ol'>
 ) & {
     node?: unknown
     ordered?: boolean
