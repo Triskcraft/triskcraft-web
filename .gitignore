@@ -6,3 +6,5 @@ tsconfig.tsbuildinfo
 .env*
 public/mods/pack-mods-triskcraftsmp.rar
 triskcraft.code-workspace
+
+.vercel
