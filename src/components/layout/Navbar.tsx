@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
-import app from '@eliyya/type-routes'
+import { app } from '@/lib/routes'
 import { DISCORD_GUILD_URL, MODPACK_DOWNLOAD_URL } from '@/constant/api'
 import { useSessionStore } from '@/stores/session'
 

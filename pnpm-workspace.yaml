@@ -1,9 +1,12 @@
 packages:
-    - .
+  - .
 
 saveExact: true
 
 allowBuilds:
-    '@eliyya/type-routes': false
-    sharp: true
-    unrs-resolver: true
+  '@eliyya/type-routes': false
+  sharp: true
+  unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - postcss@8.5.20
