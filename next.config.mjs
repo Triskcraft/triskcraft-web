@@ -1,4 +1,4 @@
-import { withTypeRoute } from '@eliyya/type-routes/next'
+import { withTypeRoutes } from '@eliyya/type-routes/next'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,4 +21,4 @@ const nextConfig = {
     },
 }
 
-export default withTypeRoute(nextConfig)
+export default withTypeRoutes({})(nextConfig)

@@ -2,8 +2,8 @@ import { Carrusel } from '@/components/Carrusel'
 import { HowToJoin } from '@/components/ComoUnirse'
 import { VideoCard } from '@/components/video-card'
 import { DigsTable } from '@/components/DigsTotal'
+import { app } from '@/lib/routes'
 import Link from 'next/link'
-import app from '@eliyya/type-routes'
 
 export const revalidate = 43200
 

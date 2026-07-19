@@ -1,5 +1,5 @@
 // components/Footer.js
-import app from '@eliyya/type-routes'
+import { app } from '@/lib/routes'
 import Link from 'next/link'
 import {
     FaTwitter,
